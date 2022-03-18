@@ -8,14 +8,16 @@ import {
   Outlet,
 } from "react-router-dom";
 import { Spin } from "antd";
+import { useContextSelector } from "use-context-selector";
+import { AuthContext } from "../context";
 
 const Login = lazy(() => import("../screens/Login"));
 const Device = lazy(() => import("../screens/Device"));
 
 function PrivateRoute() {
   const location = useLocation();
-  const isLoggedIn = false;
-  return isLoggedIn ? (
+  const [token] = useContextSelector(AuthContext, (auth) => auth);
+  return token ? (
     <Outlet />
   ) : (
     <Navigate to={"/"} state={{ from: location }} replace />
@@ -24,18 +26,16 @@ function PrivateRoute() {
 
 function AppRoutes() {
   return (
-    <div>
-      <Suspense fallback={<Spin size="large" />}>
-        <Router>
-          <Routes>
-            <Route path="" element={<Login />} />
-            <Route path="" element={<PrivateRoute />}>
-              <Route path="/device/" element={<Device />} />
-            </Route>
-          </Routes>
-        </Router>
-      </Suspense>
-    </div>
+    <Suspense fallback={<Spin size="large" />}>
+      <Router>
+        <Routes>
+          <Route path="" element={<Login />} />
+          <Route path="" element={<PrivateRoute />}>
+            <Route path="/device/" element={<Device />} />
+          </Route>
+        </Routes>
+      </Router>
+    </Suspense>
   );
 }
 

@@ -1,27 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Navigate, useLocation } from "react-router-dom";
+import React from "react";
 
-function Login(props) {
-  const location = useLocation();
-  const isLoggedIn = false;
+import UserAuth from "../../features/UserAuth";
 
-  const [redirectToReferrer, setRedirectToReferrer] = useState(false);
-  useEffect(() => {
-    if (isLoggedIn) {
-      setRedirectToReferrer(true);
-    }
-  }, [isLoggedIn]);
-
-  const { from } = location.state || { from: { pathname: "/device" } };
-
-  if (redirectToReferrer) {
-    return <Navigate to={from} />;
-  }
-  return (
-    <div>
-      <h1>Login</h1>
-    </div>
-  );
+function Login() {
+  return <UserAuth />;
 }
 
 export default Login;

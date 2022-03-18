@@ -1,13 +1,17 @@
 import React from "react";
 import Layout from "./components/Layouts";
 import AppRoutes from "./router";
+import RootContextProvider from "./context";
+
 import "./App.less";
 
 const App = () => (
   <div className="App">
-    <Layout>
-      <AppRoutes />
-    </Layout>
+    <RootContextProvider>
+      <Layout>
+        <AppRoutes />
+      </Layout>
+    </RootContextProvider>
   </div>
 );
 

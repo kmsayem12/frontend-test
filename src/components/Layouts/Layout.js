@@ -6,7 +6,7 @@ const { Content } = Layout;
 function Layouts({ children }) {
   return (
     <Layout>
-      <Content style={{ padding: "0 50px" }}>{children}</Content>
+      <Content>{children}</Content>
     </Layout>
   );
 }
