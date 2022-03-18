@@ -13,9 +13,17 @@ function Devices() {
   };
 
   useEffect(() => {
+    // initial api call
     getDevices();
+    // every 5 seconds api call
+    const intervalCall = setInterval(() => {
+      getDevices();
+    }, 5000);
+    return () => {
+      // clean up
+      clearInterval(intervalCall);
+    };
   }, []);
-  console.log(list);
 
   return (
     <RowWrapper>

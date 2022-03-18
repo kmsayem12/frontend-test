@@ -2,6 +2,8 @@ import axios from "axios";
 import { message } from "antd";
 import { getLocalStorage } from "../lib/helpers";
 
+export const cancelTokenSource = axios.CancelToken.source();
+
 const http = axios.create({
   headers: {
     Accept: "application/json",
