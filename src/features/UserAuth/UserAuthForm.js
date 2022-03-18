@@ -25,7 +25,7 @@ function UserAuthForm() {
         rules={[{ required: true }, { type: "email" }]}
         hasFeedback
       >
-        <Input placeholder="Email" prefix={<UserOutlined />} />
+        <Input placeholder="Email Address" prefix={<UserOutlined />} />
       </Form.Item>
 
       <Form.Item name="password" rules={[{ required: true }]} hasFeedback>
@@ -40,7 +40,7 @@ function UserAuthForm() {
             type="primary"
             htmlType="submit"
           >
-            Login
+            LOG IN
           </Button>
         </Form.Item>
       </Row>

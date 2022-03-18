@@ -20,8 +20,12 @@ export const FooterWrapper = styled("div")`
   justify-content: center;
   align-items: center;
   height: 100px;
-  button:last-child {
+  button{
+    border-radius: 4px;
+    &:last-child {
     margin-left: 1em;
+    background: #36474f;
+    border-color: #36474f;
   }
 `;
 
@@ -30,9 +34,16 @@ export const DevicesWrapper = styled("div")`
   display: flex;
   justify-content: center;
   align-items: center;
-  h1 {
+  .text-center {
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
     position: absolute;
-    color: white;
+    h1,
+    h4 {
+      color: white;
+    }
   }
   .circle {
     display: grid;

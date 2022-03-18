@@ -15,6 +15,11 @@ export const LoginWrapper = styled("div")`
     border-radius: 0.6rem;
     h1 {
       font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    button {
+      background: #0177bd;
+      border-color: #0177bd;
     }
   }
 `;

@@ -29,10 +29,14 @@ function Devices() {
     <RowWrapper>
       <div className="devices-content">
         <DevicesWrapper>
-          <h1 className="text-center">
-            {list.length}
-            <br /> Devices Online
-          </h1>
+          <div className="text-center">
+            <h1>{list.length}</h1>
+            <h4>
+              DEVICES
+              <br /> ONLINE
+            </h4>
+          </div>
+
           <DevicesList list={list} />
         </DevicesWrapper>
       </div>

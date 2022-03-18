@@ -10,17 +10,10 @@ function Footer() {
 
   return (
     <FooterWrapper>
-      <Button size="large" className="px-4">
-        notify
-      </Button>
+      <Button>NOTIFY</Button>
 
-      <Button
-        size="large"
-        className="px-4"
-        type="primary"
-        onClick={() => logOut()}
-      >
-        Logout
+      <Button type="primary" onClick={() => logOut()}>
+        LOG OUT
       </Button>
     </FooterWrapper>
   );
