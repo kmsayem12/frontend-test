@@ -21,13 +21,15 @@ http.interceptors.request.use((config) => {
 });
 
 http.interceptors.response.use(null, (error) => {
-  if (error?.response?.message) {
+  if (error?.response?.status === 401) {
+    const formErrors = error.response.data;
+    message.error(formErrors);
+    return { error };
+  } else if (error?.response?.message) {
     message.error(error.response.message);
     return { error };
   }
-
   message.error("Something went wrong!");
-
   return { error };
 });
 
