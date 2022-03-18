@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function DevicesList({ list }) {
   const devices = list?.map((item, index) => (
@@ -10,5 +11,9 @@ function DevicesList({ list }) {
     </div>
   );
 }
+
+DevicesList.propTypes = {
+  list: PropTypes.array.isRequired,
+};
 
 export default DevicesList;

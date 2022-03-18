@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { Row } from "antd";
 
-export const RowWrapper = styled("div")`
+export const LoginWrapper = styled("div")`
   height: 100vh;
   position: relative;
   background: #253237;

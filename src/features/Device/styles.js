@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Row } from "antd";
 
 export const RowWrapper = styled("div")`
   height: 100vh;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { useContextSelector } from "use-context-selector";
-import { RowWrapper } from "./styles";
+import { LoginWrapper } from "./styles";
 import UserAuthForm from "./UserAuthForm";
 import { AuthContext } from "../../context";
 
@@ -22,12 +22,12 @@ function UserAuth() {
     return <Navigate to={from} />;
   }
   return (
-    <RowWrapper>
+    <LoginWrapper>
       <div className="login-content">
         <h1 className="text-center">Login</h1>
         <UserAuthForm />
       </div>
-    </RowWrapper>
+    </LoginWrapper>
   );
 }
 

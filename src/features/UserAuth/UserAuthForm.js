@@ -21,7 +21,6 @@ function UserAuthForm() {
       validateMessages={getValidateMessages("name")}
     >
       <Form.Item
-        className="mb-3"
         name="email"
         rules={[{ required: true }, { type: "email" }]}
         hasFeedback
@@ -29,12 +28,7 @@ function UserAuthForm() {
         <Input placeholder="Email" prefix={<UserOutlined />} />
       </Form.Item>
 
-      <Form.Item
-        className="mb-3"
-        name="password"
-        rules={[{ required: true }]}
-        hasFeedback
-      >
+      <Form.Item name="password" rules={[{ required: true }]} hasFeedback>
         <Input.Password placeholder="Password" prefix={<LockOutlined />} />
       </Form.Item>
 
